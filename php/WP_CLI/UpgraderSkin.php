@@ -81,4 +81,11 @@ class UpgraderSkin extends WP_Upgrader_Skin {
 
 		WP_CLI::log( $string );
 	}
+
+	/**
+	 * Print plugin name before beginning the update.
+	 */
+	public function before() {
+		WP_CLI::log(sprintf('Updating %s...', $this->plugin_info['Name'])) ;
+	}
 }
